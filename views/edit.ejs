@@ -1,0 +1,20 @@
+<%- include('partials/header', { pageTitle: 'Edit Post' }) %>
+    <div class="space-y-2">
+        <h2 class="text-2xl font-semibold text-slate-900">Edit your post</h2>
+        <p class="text-sm text-slate-500">Post id: <%= post.id %></p>
+        <p class="text-sm text-slate-500 font-semibold">@<%= post.username %></p>
+    </div>
+    <form method="post" action="/posts/<%= post.id %>?_method=PATCH" class="mt-4 space-y-4 max-w-xl">
+        <div>
+            <label class="block text-sm font-medium text-slate-700 mb-1">Content (Markdown supported)</label>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <textarea name="content" rows="10" class="w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"><%= post.content %></textarea>
+                <div id="md-preview" class="w-full rounded-md border border-slate-200 p-3 bg-white text-slate-800"></div>
+            </div>
+        </div>
+        <div class="flex items-center gap-3">
+            <a href="/posts" class="px-4 py-2 rounded-md border border-slate-300 text-slate-700 hover:bg-slate-50">Cancel</a>
+            <button class="px-4 py-2 rounded-md bg-red-700 text-white hover:bg-red-600">Submit</button>
+        </div>
+    </form>
+<%- include('partials/footer') %>

@@ -1,0 +1,26 @@
+<%- include('partials/header', { pageTitle: 'Create New Post' }) %>
+    <div class="max-w-xl">
+        <h1 class="text-2xl font-semibold mb-4 text-slate-900">Create New Post</h1>
+        <form method="post" action="/posts" class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Username</label>
+                <input name="username" placeholder="enter username" class="w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" />
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Content (Markdown supported)</label>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <textarea name="content" placeholder="write your post" rows="10" class="w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400"></textarea>
+                    <div id="md-preview" class="w-full rounded-md border border-slate-200 p-3 bg-white text-slate-800"></div>
+                </div>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Tags (comma separated)</label>
+                <input name="tags" placeholder="e.g. Career, DSA" class="w-full rounded-md border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-400" />
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/posts" class="px-4 py-2 rounded-md border border-slate-300 text-slate-700 hover:bg-slate-50">Cancel</a>
+                <button class="px-4 py-2 rounded-md bg-red-700 text-white hover:bg-red-600">Submit Post</button>
+            </div>
+        </form>
+    </div>
+<%- include('partials/footer') %>

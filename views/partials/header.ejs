@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= typeof pageTitle !== 'undefined' ? pageTitle : 'REST_APIS' %></title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js"></script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-800">
+    <header class="sticky top-0 z-10 bg-red-700 text-white shadow">
+        <div class="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="/posts" class="text-xl font-semibold">Quora Posts</a>
+            <nav class="flex items-center gap-3">
+                <a href="/posts" class="px-3 py-1.5 rounded-md text-sm hover:bg-red-600/90">Home</a>
+                <a href="/posts/new" class="px-3 py-1.5 rounded-md text-sm bg-white text-red-700 hover:bg-red-50">New Post</a>
+            </nav>
+        </div>
+    </header>
+    <main class="max-w-3xl mx-auto px-4 py-6">
+
